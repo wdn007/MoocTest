@@ -10,10 +10,34 @@ Target Server Type    : MYSQL
 Target Server Version : 50630
 File Encoding         : 65001
 
-Date: 2017-11-22 12:12:32
+Date: 2017-11-22 12:58:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for article
+-- ----------------------------
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE `article` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `module` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `content` text,
+  `keyword` varchar(255) DEFAULT NULL,
+  `classification` varchar(255) DEFAULT NULL,
+  `visit_count` int(11) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `modify_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `user_id` int(11) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of article
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for course
@@ -122,6 +146,77 @@ CREATE TABLE `course_notice` (
 
 -- ----------------------------
 -- Records of course_notice
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for discuss
+-- ----------------------------
+DROP TABLE IF EXISTS `discuss`;
+CREATE TABLE `discuss` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `course_id` int(11) NOT NULL,
+  `classification` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `create_date` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `modify_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `visit_count` int(11) DEFAULT NULL,
+  `reply_count` int(11) DEFAULT NULL,
+  `praise_count` int(11) DEFAULT NULL,
+  `nonsupport_count` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of discuss
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for discuss_reply
+-- ----------------------------
+DROP TABLE IF EXISTS `discuss_reply`;
+CREATE TABLE `discuss_reply` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `discuss_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `content` text,
+  `create_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `modify_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `praise_count` int(11) DEFAULT NULL,
+  `nonsupport_count` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of discuss_reply
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for download
+-- ----------------------------
+DROP TABLE IF EXISTS `download`;
+CREATE TABLE `download` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `keyword` varchar(255) DEFAULT NULL,
+  `classification` varchar(255) NOT NULL,
+  `dfile` varchar(255) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `create_date` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `modify_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `visit_count` int(11) DEFAULT NULL,
+  `download_count` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of download
 -- ----------------------------
 
 -- ----------------------------
