@@ -82,4 +82,5 @@ out/*
 
 ~$*
 classes/
-!web/WEB-INF/lib/*.jar
+MoocTest2.iml
+WebRoot/META-INF/persistence.xml
