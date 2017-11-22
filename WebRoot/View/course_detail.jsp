@@ -116,8 +116,7 @@
     <div class="courseDetail-top">
         <div class="top-left">
             <h1><%=course.getName() %></h1>
-            <p>软件工程是研究或应用工程化方法创造、构建和维护高质量软件的学科。本课程以软件工程概念、问题、思维、理论与技术为主线，深入浅出地介绍了软件工程学科与知识体系、计算思维
-            </p>
+            <p><%=course.getSummary() %></p>
         </div>
         <div class="top-right">
             <img src="${pageContext.request.contextPath}<%=course.getPicturePath() %>"/>
