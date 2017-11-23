@@ -170,7 +170,7 @@
 					<div class="courseImg col-xs-12"><a href="courseDetail.html"><img src="./img/sofewareTest.jpg"  /></a></div>
 					<div class="textRight col-xs-12">
 						<div class="courseName">
-							<a href="courseDetail.html">${ courseList.name }</a>
+							<a href="${pageContext.request.contextPath}/course/detail/${ courseList.id }">${ courseList.name }</a>
 						</div>
 						<div class="courseDetail1">
 							<a>桂林电子科技大学</a>

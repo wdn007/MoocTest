@@ -82,5 +82,10 @@ out/*
 
 ~$*
 classes/
+<<<<<<< HEAD
 !web/WEB-INF/lib/*.jar
 WebRoot/View/index.jsp
+=======
+MoocTest2.iml
+WebRoot/META-INF/persistence.xml
+>>>>>>> ca6b31df9b794bc81ea86658c36729dc654de255
