@@ -83,3 +83,4 @@ out/*
 ~$*
 classes/
 !web/WEB-INF/lib/*.jar
+WebRoot/View/index.jsp

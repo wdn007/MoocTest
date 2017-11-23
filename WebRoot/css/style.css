@@ -865,7 +865,7 @@ div.sdmenu div>p>input{
 }
 /*skillPage style*/
 .second-nav{
-	margin-top: 30px;
+	margin-top: 15px;
     background: #f8f8f8;
     border-bottom: 2px solid #55b929;
 }
@@ -891,15 +891,15 @@ div.sdmenu div>p>input{
 	color: #55b929;
 }
 .skill-list h1{
-	font-size: 18px;	
+	font-size: 15px;	
 	font-weight: bold;
 }
 .skill-list h1 span{
 	color: #55b929;
-	font-size: 18px;	
+	font-size: 15px;	
 }
 .skill-list h2{
-	font-size: 14px;	
+	font-size: 12px;	
 	color: #333;
 	margin-left: 20px;
 }
