@@ -18,8 +18,8 @@
 
 	<title>测试技术列表</title>
 	
-	<link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
 	//触发登录模态框
 	<script>
 		$('#identifier').modal(options);
@@ -241,10 +241,10 @@
 			<p>Copyright © 2017- GUET All Rights Reserved.</p>
 		</footer>
 		<!--footer end-->
-		<script type="text/javascript" src="./js/jquery-3.2.1.min.js" ></script>
-		<script type="text/javascript" src="./bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js" ></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
 		<script type="text/javascript">
-		    function gotoPage(pageNum) {
+		/*    function gotoPage(pageNum) {
 		        var myForm = document.createElement("form");
 		        myForm.method = "get";
 		        myForm.action = "article/skillArticleShow";
@@ -254,9 +254,9 @@
 		        myForm.appendChild(myInput);
 		        document.body.appendChild(myForm);
 		        myForm.submit();
-		    }
+		    } */
 		    
-		    $("#classification li").onclick(function(){
+		    $("#classification li").click(function(){
 			    var classification = this.innerText;
 			    classification = classification.substring(0, classification.length-1);
 			    $("#classificationInput").val(classification);
