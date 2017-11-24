@@ -416,19 +416,22 @@ ul li{
 }
 #study-right{
 	background-color: #fff;
-    border-left: 1px solid #ddd;
-    padding: 40px;
-    margin-left: 250px;
-    float: left;
-    min-width: 1098px;
-    margin-top: -460px;
-    min-height: 600px;
+	border-left: 1px solid #ddd;
+	padding: 40px;
+	margin-left: 250px;
+	float: left;
+	/* min-width: 1098px; */
+	width: 100%;
+	margin-top: -460px;
+	/* margin-top: 10px; */
+	min-height: 600px;
 }
 .titleLeft{
 	padding: 8px 20px;
     background: #F8F8F8;
     margin-bottom: 10px;
     margin-right: 20px;
+	width: 60%;
 }
 .titleRight>input{
 	background: #FF6C00;
@@ -441,8 +444,15 @@ ul li{
 	margin-top: 20px;
 	margin-left: 50px;
 }
+.mod>div{
+	float: left;
+}
 .mod-left{
-	margin-right: 280px;
+	margin-right: 50px;
+	width: 55%;
+}
+.mod2-left{
+	width: 80%;
 }
 .top-title{
 	border-bottom: 1px solid #eee;
@@ -459,9 +469,12 @@ ul li{
 }
 .mod-right{
 	width: 270px;
-	float: right;
+	/* float: right; */
 	padding: 40px 10px;
-	margin-top: -470px;
+	/* margin-top: -470px; */
+}
+.level-box{
+	width:80%;
 }
 .soon-for-due,
 .latest-update{
@@ -670,6 +683,7 @@ div.sdmenu div>p>input{
 .discuss-notice{
 	padding: 20px;
 	margin-bottom: 20px;
+	width: 100%;
 }
 .discuss-notice>p>a{
 	color: #55b929;
