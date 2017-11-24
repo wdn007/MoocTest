@@ -38,11 +38,11 @@
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav mynav">
-                <li class="active"><a href="index.html">慕课课程</a></li>
-                <li><a href="skillList.html">测试技术</a></li>
-                <li><a href="toolsList.html">测试工具</a></li>
-                <li><a href="downloadList.html">测试下载</a></li>
-                <li><a href="about.html">关于我们</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/Show/indexShow.do">慕课课程</a></li>
+                <li><a href="${pageContext.request.contextPath}/article/skillArticleShow">测试技术</a></li>
+                <li><a href="${pageContext.request.contextPath}/article/toolArticleShow">测试工具</a></li>
+                <li><a href="${pageContext.request.contextPath}/download/downloadShow">测试下载</a></li>
+                <li><a href="${pageContext.request.contextPath}/View/about.jsp">关于我们</a></li>
                 <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         关于我们 <b class="caret"></b>
