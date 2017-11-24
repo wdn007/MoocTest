@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50630
 File Encoding         : 65001
 
-Date: 2017-11-24 11:44:29
+Date: 2017-11-24 11:53:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,7 +31,7 @@ CREATE TABLE `article` (
   `modify_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `user_id` varchar(11) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
-  `status` int(255) DEFAULT '1',
+  `status` int(11) DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -54,11 +54,7 @@ CREATE TABLE `course` (
   `teacher` varchar(255) DEFAULT NULL,
   `picture_path` varchar(255) DEFAULT NULL,
   `attend_count` int(11) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
-  `course_id` varchar(255) NOT NULL,
-  `course_out_line` longtext,
-  `course_progress` int(11) DEFAULT NULL,
-  `version` bigint(20) NOT NULL,
+  `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_pb1syocle6w9q5kxr2mw0w1io` (`organization`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
@@ -76,7 +72,7 @@ CREATE TABLE `courseware` (
   `modify_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `course_file` varchar(255) DEFAULT NULL,
   `flie_type` varchar(255) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -90,7 +86,7 @@ CREATE TABLE `course_chapter` (
   `course_id` int(11) NOT NULL,
   `create_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `modify_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(255) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -105,7 +101,7 @@ CREATE TABLE `course_notice` (
   `user_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
   `create_date` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(255) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -126,7 +122,7 @@ CREATE TABLE `discuss` (
   `reply_count` int(11) DEFAULT NULL,
   `praise_count` int(11) DEFAULT NULL,
   `nonsupport_count` int(11) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -143,7 +139,7 @@ CREATE TABLE `discuss_reply` (
   `modify_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `praise_count` int(11) DEFAULT NULL,
   `nonsupport_count` int(11) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -164,7 +160,7 @@ CREATE TABLE `download` (
   `modify_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `visit_count` int(11) DEFAULT NULL,
   `download_count` int(11) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
