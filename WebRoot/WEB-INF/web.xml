@@ -5,8 +5,8 @@
     <servlet-name>ConnectorServlet</servlet-name>
     <servlet-class>com.ckfinder.connector.ConnectorServlet  
         </servlet-class>
-    <init-param>
-      <param-name>XMLConfig</param-name>
+    <init-param> 
+      <param-name>XMLConfig</param-name> 
       <param-value>/WEB-INF/config.xml</param-value>
     </init-param>
     <init-param>

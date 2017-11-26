@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by wdn 
  */
 @Entity
-@Table(name = "course", schema = "mooctest", catalog = "")
+@Table(name = "course", schema = "spring_mvc", catalog = "")
 public class CourseEntity
 {
     private long id;
@@ -23,12 +23,6 @@ public class CourseEntity
     private String name;
     private String picturePath;
     private String status;
-    private Integer createId;
-    private String summary;
-    private String criterion;
-    private String organization;
-    private String teacher;
-    private Integer attendCount;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -79,7 +73,7 @@ public class CourseEntity
     }
 
     @Basic
-    @Column(name = "begin_time", nullable = false)
+    @Column(name = "begin_time", nullable = true)
     public Timestamp getBeginTime()
     {
         return beginTime;
@@ -91,7 +85,7 @@ public class CourseEntity
     }
 
     @Basic
-    @Column(name = "content", nullable = true, length = -1)
+    @Column(name = "content", nullable = true, length = 255)
     public String getContent()
     {
         return content;
@@ -139,7 +133,7 @@ public class CourseEntity
     }
 
     @Basic
-    @Column(name = "end_time", nullable = false)
+    @Column(name = "end_time", nullable = true)
     public Timestamp getEndTime()
     {
         return endTime;
@@ -175,7 +169,7 @@ public class CourseEntity
     }
 
     @Basic
-    @Column(name = "status", nullable = true, length = 255)
+    @Column(name = "status", nullable = false, length = 255)
     public String getStatus()
     {
         return status;
@@ -273,77 +267,5 @@ public class CourseEntity
         result = 31 * result + (picturePath != null ? picturePath.hashCode() : 0);
         result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
-    }
-
-    @Basic
-    @Column(name = "create_id", nullable = true)
-    public Integer getCreateId()
-    {
-        return createId;
-    }
-
-    public void setCreateId(Integer createId)
-    {
-        this.createId = createId;
-    }
-
-    @Basic
-    @Column(name = "summary", nullable = true, length = -1)
-    public String getSummary()
-    {
-        return summary;
-    }
-
-    public void setSummary(String summary)
-    {
-        this.summary = summary;
-    }
-
-    @Basic
-    @Column(name = "criterion", nullable = true, length = 255)
-    public String getCriterion()
-    {
-        return criterion;
-    }
-
-    public void setCriterion(String criterion)
-    {
-        this.criterion = criterion;
-    }
-
-    @Basic
-    @Column(name = "organization", nullable = true, length = 255)
-    public String getOrganization()
-    {
-        return organization;
-    }
-
-    public void setOrganization(String organization)
-    {
-        this.organization = organization;
-    }
-
-    @Basic
-    @Column(name = "teacher", nullable = true, length = 255)
-    public String getTeacher()
-    {
-        return teacher;
-    }
-
-    public void setTeacher(String teacher)
-    {
-        this.teacher = teacher;
-    }
-
-    @Basic
-    @Column(name = "attend_count", nullable = true)
-    public Integer getAttendCount()
-    {
-        return attendCount;
-    }
-
-    public void setAttendCount(Integer attendCount)
-    {
-        this.attendCount = attendCount;
     }
 }

@@ -1,5 +1,4 @@
 <%@ page import="cn.guet.mooc.entity.CourseEntity" %>
-<%@ page import="cn.guet.mooc.tool.TimeTool" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     CourseEntity course = (CourseEntity)request.getAttribute("course");
@@ -116,7 +115,8 @@
     <div class="courseDetail-top">
         <div class="top-left">
             <h1><%=course.getName() %></h1>
-            <p><%=course.getSummary() %></p>
+            <p>软件工程是研究或应用工程化方法创造、构建和维护高质量软件的学科。本课程以软件工程概念、问题、思维、理论与技术为主线，深入浅出地介绍了软件工程学科与知识体系、计算思维
+            </p>
         </div>
         <div class="top-right">
             <img src="${pageContext.request.contextPath}<%=course.getPicturePath() %>"/>
@@ -130,14 +130,14 @@
         <div class="courseDetail-right">
             <div class="courseInfo">
                 <h1>课程信息</h1>
-                <p><span>开课</span><%=TimeTool.GetDateString(course.getBeginTime()) %></p>
-                <p><span>结课</span><%=TimeTool.GetDateString(course.getEndTime()) %></p>
+                <p><span>开课</span>2017-10-1</p>
+                <p><span>结课</span>2018-1-1</p>
                 <a href="courseStudy.html" >开始学习</a>
             </div>
             <div class="teacherInfo">
                 <h1>教师信息</h1>
-                <p><span>姓名</span><%=course.getTeacher() %></p>
-                <p><span>学校</span><%=course.getOrganization() %></p>
+                <p><span>姓名</span>张三</p>
+                <p><span>学校</span>桂林电子科技大学</p>
             </div>
         </div>
     </div>

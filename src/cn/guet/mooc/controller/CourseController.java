@@ -2,11 +2,11 @@ package cn.guet.mooc.controller;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -32,7 +32,7 @@ public class CourseController extends BaseController
     private SessionFactory sessionFactory;
 
     @RequestMapping(value = "list", method = RequestMethod.GET)
-    public String courseList(ModelMap map)
+    public String listUsers(ModelMap map)
     {
         Session ses = sessionFactory.getCurrentSession();
         List<CourseEntity> list = ses.createCriteria(CourseEntity.class).addOrder(Order.desc("id")).list();
@@ -41,15 +41,6 @@ public class CourseController extends BaseController
         ses.close();
 
         return "index";
-    }
-
-    @RequestMapping(value = "detail/{id}", method = RequestMethod.GET)
-    public String courseDetail(ModelMap map, @PathVariable("id") long id)
-    {
-        CourseEntity course = courseService.findOne(id);
-        map.addAttribute("course", course);
-
-        return "course_detail";
     }
 
 }

@@ -18,10 +18,10 @@
 
 	<title>测试技术列表</title>
 	
-	<link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="./css/style.css" />
-	//触发登录模态框
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
 	<script>
+		//触发登录模态框
 		$('#identifier').modal(options);
 	</script>
 </head>
@@ -61,11 +61,11 @@
 				</div>
 			    <div class="collapse navbar-collapse" id="example-navbar-collapse">
 			        <ul class="nav navbar-nav mynav">
-						<li class="active"><a href="${pageContext.request.contextPath}/Show/indexShow.do">慕课课程</a></li>
-						<li><a href="${pageContext.request.contextPath}/article/skillArticleShow">测试技术</a></li>
-						<li><a href="${pageContext.request.contextPath}/article/toolArticleShow">测试工具</a></li>
-						<li><a href="${pageContext.request.contextPath}/download/downloadShow">测试下载</a></li>
-						<li><a href="${pageContext.request.contextPath}/View/about.jsp">关于我们</a></li>
+			            <li class="active"><a href="${pageContext.request.contextPath}/Show/indexShow.do">慕课课程</a></li>
+			            <li><a href="${pageContext.request.contextPath}/article/skillArticleShow">测试技术</a></li>
+			            <li><a href="${pageContext.request.contextPath}/article/toolArticleShow">测试工具</a></li>
+			            <li><a href="downloadList.html">测试下载</a></li>
+			            <li><a href="about.html">关于我们</a></li>
 			            <li>
 			            	<form class="navbar-form navbar-left row" role="search">
 								<div class="form-group col-xs-10">
@@ -190,7 +190,6 @@
 					<div style="clear:both"></div>
 				</div>
 				</c:forEach>
-
 		<!-- 		<div class="course-list skill-list">
 					<h1><span>【功能测试】</span>触发器功能测试及应用</h1>
 					<h2>发表于:<span>2017-11-8 10:00</span></h2>
@@ -242,10 +241,10 @@
 			<p>Copyright © 2017- GUET All Rights Reserved.</p>
 		</footer>
 		<!--footer end-->
-		<script type="text/javascript" src="./js/jquery-3.2.1.min.js" ></script>
-		<script type="text/javascript" src="./bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js" ></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
 		<script type="text/javascript">
-		    function gotoPage(pageNum) {
+		/*    function gotoPage(pageNum) {
 		        var myForm = document.createElement("form");
 		        myForm.method = "get";
 		        myForm.action = "article/skillArticleShow";
@@ -255,9 +254,9 @@
 		        myForm.appendChild(myInput);
 		        document.body.appendChild(myForm);
 		        myForm.submit();
-		    }
+		    } */
 		    
-		    $("#classification li").onclick(function(){
+		    $("#classification li").click(function(){
 			    var classification = this.innerText;
 			    classification = classification.substring(0, classification.length-1);
 			    $("#classificationInput").val(classification);

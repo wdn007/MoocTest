@@ -19,19 +19,11 @@ public class CourseService
     @Autowired // 使用@Autowired进行自动装配，而不需要get/set方法
     public CourseDAO courseDAO;
 
-    public Long count(String hql)
-    {
+    public Long count(String hql) {
         return courseDAO.count(hql);
     }
-
-    public List<CourseEntity> find(String hql, int page, int rows)
-    {
+    public List<CourseEntity> find(String hql, int page, int rows) {
         return courseDAO.find(hql, page, rows);
-    }
-
-    public CourseEntity findOne(long id)
-    {
-        return courseDAO.findOne(id);
     }
 
 }
